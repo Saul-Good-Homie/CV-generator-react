@@ -20,7 +20,8 @@ body {
 	border-radius: 5px;
 }
 
-.header {
+.header,
+.sub-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -54,18 +55,18 @@ body {
 	width: 100%;
 }
 
-.task {
+.section {
 	background: #f4f4f4;
 	margin: 5px;
 	padding: 10px 20px;
 	cursor: pointer;
 }
 
-.task.reminder {
+.section.reminder {
 	border-left: 5px solid green;
 }
 
-.task h3 {
+.section h3 {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

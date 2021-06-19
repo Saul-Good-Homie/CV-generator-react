@@ -1,9 +1,11 @@
 import React from 'react';
+import Button from './Button.js';
 
-const Subheader = () => {
+const Subheader = ({ name }) => {
 	return (
 		<header className="sub-header">
-			<h3>Subheader</h3>
+			<h2>{name}</h2>
+			<Button text="Add" />
 		</header>
 	);
 };
