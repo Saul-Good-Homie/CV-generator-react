@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Subheader from './components/Subheader';
 import Sections from './components/Sections.js';
+import AddEducation from './components/AddEducation.js';
 
 function App() {
 	const [dataset, setDataset] = useState([
@@ -10,18 +11,26 @@ function App() {
 			name: 'University of Oregon',
 			from: '2010',
 			to: '2015',
-			Degree: 'Bachelor of Science',
-			GPA: 4.0,
+			degree: 'Bachelor of Science',
+			gpa: 4.0,
 		},
 		{
 			id: 2,
 			name: 'North Dakota State University',
 			from: '2015',
 			to: '2017',
-			Degree: 'MBA',
-			GPA: 4.0,
+			degree: 'MBA',
+			gpa: 4.0,
 		},
 	]);
+
+	//Add education section from form
+	const addEducation = (education) => {
+		const id = Math.floor(Math.random() * 10000) + 1;
+		const newEducation = { id, ...education };
+		console.log(newEducation);
+		setDataset([...dataset, newEducation]);
+	};
 
 	// Delete a resume section
 	const deleteSection = (id) => {
@@ -32,11 +41,12 @@ function App() {
 		<div className="container">
 			<Header />
 			<Subheader name="Education" />
+			<AddEducation onAdd={addEducation} />
 			<Sections dataset={dataset} onDelete={deleteSection} />
 
-			<Subheader name="Work Experience" />
+			{/* <Subheader name="Work Experience" />
 
-			<Subheader name="Skills" />
+			<Subheader name="Skills" /> */}
 		</div>
 	);
 }

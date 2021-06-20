@@ -11,9 +11,11 @@ const Section = ({ data, onDelete }) => {
 					style={{ color: 'red', cursor: 'pointer' }}
 				/>
 			</h3>
+			<h4>Degree: {data.degree}</h4>
 			<p>From: {data.from}</p>
 			<p>To: {data.to}</p>
-			<p>GPA: {data.GPA}</p>
+
+			<p>GPA: {data.gpa}</p>
 		</div>
 	);
 };
