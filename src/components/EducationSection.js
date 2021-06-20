@@ -11,9 +11,11 @@ const EducationSection = ({ data, onDelete }) => {
 					style={{ color: 'red', cursor: 'pointer' }}
 				/>
 			</h3>
-			<h4>Degree: {data.degree}</h4>
-			<p>From: {data.from}</p>
-			<p>To: {data.to}</p>
+			<h4>{data.degree}</h4>
+			<div className="flex">
+				<p>From: {data.from}</p>
+				<p>To: {data.to}</p>
+			</div>
 
 			<p>GPA: {data.gpa}</p>
 		</div>

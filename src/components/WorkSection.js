@@ -11,9 +11,11 @@ const WorkSection = ({ data, onDelete }) => {
 					style={{ color: 'red', cursor: 'pointer' }}
 				/>
 			</h3>
-			<h4>Title: {data.title}</h4>
-			<p>From: {data.from}</p>
-			<p>To: {data.to}</p>
+			<h4>{data.title}</h4>
+			<div className="flex">
+				<p>From: {data.from}</p>
+				<p>To: {data.to}</p>
+			</div>
 		</div>
 	);
 };

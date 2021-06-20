@@ -6,9 +6,27 @@ import WorkSections from './components/WorkSections.js';
 import AddEducation from './components/AddEducation.js';
 import AddWork from './components/AddWork';
 import AddSkill from './components/AddSkill.js';
+import AddPersonal from './components/AddPersonal.js';
+import PersonalSections from './components/PersonalSections.js';
 import SkillSections from './components/SkillSections';
 
 function App() {
+	//Personal data
+	const [showAddPersonal, setShowAddPersonal] = useState(true);
+	const [personalDataset, setPersonalDataset] = useState([]);
+
+	//Add Personal section from form
+	const addPersonal = (personal) => {
+		const id = Math.floor(Math.random() * 10000) + 1;
+		const newPersonal = { id, ...personal };
+		setPersonalDataset([...personalDataset, newPersonal]);
+	};
+
+	// Delete personal section
+	const deletePersonal = (id) => {
+		setPersonalDataset(personalDataset.filter((data) => data.id !== id));
+	};
+
 	//Education data
 	const [showAddEducation, setShowAddEducation] = useState(false);
 	const [educationDataset, setEducationDataset] = useState([]);
@@ -60,6 +78,16 @@ function App() {
 	return (
 		<div className="container">
 			<Header />
+
+			<Subheader
+				name="Personal Information"
+				onAdd={() => setShowAddPersonal(!showAddPersonal)}
+				showAdd={showAddPersonal}
+			/>
+
+			{showAddPersonal && <AddPersonal onAdd={addPersonal} />}
+			<PersonalSections dataset={personalDataset} onDelete={deletePersonal} />
+
 			<Subheader
 				name="Education"
 				onAdd={() => setShowAddEducation(!showAddEducation)}

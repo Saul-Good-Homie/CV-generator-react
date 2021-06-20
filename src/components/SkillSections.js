@@ -2,7 +2,7 @@ import SkillSection from './SkillSection.js';
 
 const SkillSections = ({ dataset, onDelete }) => {
 	return (
-		<>
+		<div className="skills">
 			{dataset.map((data) => (
 				<SkillSection
 					key={data.id}
@@ -10,7 +10,7 @@ const SkillSections = ({ dataset, onDelete }) => {
 					onDelete={onDelete}
 				></SkillSection>
 			))}
-		</>
+		</div>
 	);
 };
 
