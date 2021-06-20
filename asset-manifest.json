@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/%7BCV-generator-react%7D/static/css/main.cd8ccad9.chunk.css",
+    "main.js": "/%7BCV-generator-react%7D/static/js/main.4930592b.chunk.js",
+    "main.js.map": "/%7BCV-generator-react%7D/static/js/main.4930592b.chunk.js.map",
+    "runtime-main.js": "/%7BCV-generator-react%7D/static/js/runtime-main.1c28205e.js",
+    "runtime-main.js.map": "/%7BCV-generator-react%7D/static/js/runtime-main.1c28205e.js.map",
+    "static/js/2.aa780504.chunk.js": "/%7BCV-generator-react%7D/static/js/2.aa780504.chunk.js",
+    "static/js/2.aa780504.chunk.js.map": "/%7BCV-generator-react%7D/static/js/2.aa780504.chunk.js.map",
+    "index.html": "/%7BCV-generator-react%7D/index.html",
+    "static/css/main.cd8ccad9.chunk.css.map": "/%7BCV-generator-react%7D/static/css/main.cd8ccad9.chunk.css.map",
+    "static/js/2.aa780504.chunk.js.LICENSE.txt": "/%7BCV-generator-react%7D/static/js/2.aa780504.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c28205e.js",
+    "static/js/2.aa780504.chunk.js",
+    "static/css/main.cd8ccad9.chunk.css",
+    "static/js/main.4930592b.chunk.js"
+  ]
+}
