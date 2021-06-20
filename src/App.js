@@ -5,23 +5,24 @@ import Sections from './components/Sections.js';
 import AddEducation from './components/AddEducation.js';
 
 function App() {
+	const [showAddEducation, setShowAddEducation] = useState(false);
 	const [dataset, setDataset] = useState([
-		{
-			id: 1,
-			name: 'University of Oregon',
-			from: '2010',
-			to: '2015',
-			degree: 'Bachelor of Science',
-			gpa: 4.0,
-		},
-		{
-			id: 2,
-			name: 'North Dakota State University',
-			from: '2015',
-			to: '2017',
-			degree: 'MBA',
-			gpa: 4.0,
-		},
+		// {
+		// 	id: 1,
+		// 	name: 'University of Oregon',
+		// 	from: '2010',
+		// 	to: '2015',
+		// 	degree: 'Bachelor of Science',
+		// 	gpa: 4.0,
+		// },
+		// {
+		// 	id: 2,
+		// 	name: 'North Dakota State University',
+		// 	from: '2015',
+		// 	to: '2017',
+		// 	degree: 'MBA',
+		// 	gpa: 4.0,
+		// },
 	]);
 
 	//Add education section from form
@@ -40,10 +41,14 @@ function App() {
 	return (
 		<div className="container">
 			<Header />
-			<Subheader name="Education" />
-			<AddEducation onAdd={addEducation} />
-			<Sections dataset={dataset} onDelete={deleteSection} />
+			<Subheader
+				name="Education"
+				onAdd={() => setShowAddEducation(!showAddEducation)}
+				showAdd={showAddEducation}
+			/>
 
+			{showAddEducation && <AddEducation onAdd={addEducation} />}
+			<Sections dataset={dataset} onDelete={deleteSection} />
 			{/* <Subheader name="Work Experience" />
 
 			<Subheader name="Skills" /> */}
