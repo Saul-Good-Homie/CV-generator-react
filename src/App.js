@@ -5,6 +5,8 @@ import EducationSections from './components/EducationSections.js';
 import WorkSections from './components/WorkSections.js';
 import AddEducation from './components/AddEducation.js';
 import AddWork from './components/AddWork';
+import AddSkill from './components/AddSkill.js';
+import SkillSections from './components/SkillSections';
 
 function App() {
 	//Education data
@@ -24,7 +26,7 @@ function App() {
 	};
 
 	//Work Experience data:
-	const [showAddWork, setShowAddWork] = useState(true);
+	const [showAddWork, setShowAddWork] = useState(false);
 	const [workDataset, setWorkDataset] = useState([]);
 
 	//Add work section from form
@@ -37,6 +39,22 @@ function App() {
 	// Delete an work section
 	const deleteWork = (id) => {
 		setWorkDataset(workDataset.filter((data) => data.id !== id));
+	};
+
+	//skill data:
+	const [showAddSkill, setShowAddSkill] = useState(false);
+	const [skillDataset, setSkillDataset] = useState([]);
+
+	//Add skill section from form
+	const addSkill = (skill) => {
+		const id = Math.floor(Math.random() * 10000) + 1;
+		const newSkill = { id, ...skill };
+		setSkillDataset([...skillDataset, newSkill]);
+	};
+
+	// Delete an skill
+	const deleteSkill = (id) => {
+		setSkillDataset(skillDataset.filter((data) => data.id !== id));
 	};
 
 	return (
@@ -62,7 +80,14 @@ function App() {
 			{showAddWork && <AddWork onAdd={addWork} />}
 			<WorkSections dataset={workDataset} onDelete={deleteWork} />
 
-			<Subheader name="Skills" />
+			<Subheader
+				name="Skills"
+				onAdd={() => setShowAddSkill(!showAddSkill)}
+				showAdd={showAddSkill}
+			/>
+
+			{showAddSkill && <AddSkill onAdd={addSkill} />}
+			<SkillSections dataset={skillDataset} onDelete={deleteSkill} />
 		</div>
 	);
 }
