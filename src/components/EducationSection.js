@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-const Section = ({ data, onDelete }) => {
+const EducationSection = ({ data, onDelete }) => {
 	return (
 		<div className="section">
 			<h3>
@@ -20,4 +20,4 @@ const Section = ({ data, onDelete }) => {
 	);
 };
 
-export default Section;
+export default EducationSection;

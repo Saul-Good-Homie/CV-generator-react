@@ -1,41 +1,42 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import Subheader from './components/Subheader';
-import Sections from './components/Sections.js';
+import EducationSections from './components/EducationSections.js';
+import WorkSections from './components/WorkSections.js';
 import AddEducation from './components/AddEducation.js';
+import AddWork from './components/AddWork';
 
 function App() {
+	//Education data
 	const [showAddEducation, setShowAddEducation] = useState(false);
-	const [dataset, setDataset] = useState([
-		// {
-		// 	id: 1,
-		// 	name: 'University of Oregon',
-		// 	from: '2010',
-		// 	to: '2015',
-		// 	degree: 'Bachelor of Science',
-		// 	gpa: 4.0,
-		// },
-		// {
-		// 	id: 2,
-		// 	name: 'North Dakota State University',
-		// 	from: '2015',
-		// 	to: '2017',
-		// 	degree: 'MBA',
-		// 	gpa: 4.0,
-		// },
-	]);
+	const [educationDataset, setEducationDataset] = useState([]);
 
 	//Add education section from form
 	const addEducation = (education) => {
 		const id = Math.floor(Math.random() * 10000) + 1;
 		const newEducation = { id, ...education };
-		console.log(newEducation);
-		setDataset([...dataset, newEducation]);
+		setEducationDataset([...educationDataset, newEducation]);
 	};
 
-	// Delete a resume section
-	const deleteSection = (id) => {
-		setDataset(dataset.filter((data) => data.id !== id));
+	// Delete an education section
+	const deleteEducation = (id) => {
+		setEducationDataset(educationDataset.filter((data) => data.id !== id));
+	};
+
+	//Work Experience data:
+	const [showAddWork, setShowAddWork] = useState(true);
+	const [workDataset, setWorkDataset] = useState([]);
+
+	//Add work section from form
+	const addWork = (work) => {
+		const id = Math.floor(Math.random() * 10000) + 1;
+		const newWork = { id, ...work };
+		setWorkDataset([...workDataset, newWork]);
+	};
+
+	// Delete an work section
+	const deleteWork = (id) => {
+		setWorkDataset(workDataset.filter((data) => data.id !== id));
 	};
 
 	return (
@@ -48,10 +49,20 @@ function App() {
 			/>
 
 			{showAddEducation && <AddEducation onAdd={addEducation} />}
-			<Sections dataset={dataset} onDelete={deleteSection} />
-			{/* <Subheader name="Work Experience" />
+			<EducationSections
+				dataset={educationDataset}
+				onDelete={deleteEducation}
+			/>
 
-			<Subheader name="Skills" /> */}
+			<Subheader
+				name="Work Experience"
+				onAdd={() => setShowAddWork(!showAddWork)}
+				showAdd={showAddWork}
+			/>
+			{showAddWork && <AddWork onAdd={addWork} />}
+			<WorkSections dataset={workDataset} onDelete={deleteWork} />
+
+			<Subheader name="Skills" />
 		</div>
 	);
 }
