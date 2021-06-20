@@ -31,18 +31,20 @@ const AddEducation = ({ onAdd }) => {
 					value={name}
 					onChange={(e) => setName(e.target.value)}
 				></input>
-				<label>From:</label>
-				<input
-					type="month"
-					value={from}
-					onChange={(e) => setFrom(e.target.value)}
-				></input>
-				<label>To:</label>
-				<input
-					type="month"
-					value={to}
-					onChange={(e) => setTo(e.target.value)}
-				></input>
+				<div className="flex">
+					<label>From:</label>
+					<input
+						type="month"
+						value={from}
+						onChange={(e) => setFrom(e.target.value)}
+					></input>
+					<label>To:</label>
+					<input
+						type="month"
+						value={to}
+						onChange={(e) => setTo(e.target.value)}
+					></input>
+				</div>
 
 				<label>Degree:</label>
 				<input

@@ -26,18 +26,20 @@ const AddPersonal = ({ onAdd }) => {
 	return (
 		<form className="add-form" onSubmit={onSubmit}>
 			<div className="form-control">
-				<input
-					type="text"
-					placeholder="First Name"
-					value={firstName}
-					onChange={(e) => setFirstName(e.target.value)}
-				></input>
-				<input
-					type="text"
-					placeholder="Last Name"
-					value={lastName}
-					onChange={(e) => setLastName(e.target.value)}
-				></input>
+				<div className="flex">
+					<input
+						type="text"
+						placeholder="First Name"
+						value={firstName}
+						onChange={(e) => setFirstName(e.target.value)}
+					></input>
+					<input
+						type="text"
+						placeholder="Last Name"
+						value={lastName}
+						onChange={(e) => setLastName(e.target.value)}
+					></input>
+				</div>
 				<input
 					type="text"
 					placeholder="Occupation"
@@ -50,18 +52,20 @@ const AddPersonal = ({ onAdd }) => {
 					value={address}
 					onChange={(e) => setAddress(e.target.value)}
 				></input>
-				<input
-					type="text"
-					placeholder="555-555-5555"
-					value={phone}
-					onChange={(e) => setPhone(e.target.value)}
-				></input>
-				<input
-					type="text"
-					placeholder="example@email.com"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-				></input>
+				<div className="flex">
+					<input
+						type="text"
+						placeholder="555-555-5555"
+						value={phone}
+						onChange={(e) => setPhone(e.target.value)}
+					></input>
+					<input
+						type="text"
+						placeholder="example@email.com"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					></input>
+				</div>
 			</div>
 			<input type="submit" className="btn btn-block" value="Save" />
 		</form>

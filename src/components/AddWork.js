@@ -29,19 +29,6 @@ const AddWork = ({ onAdd }) => {
 					value={name}
 					onChange={(e) => setName(e.target.value)}
 				></input>
-				<label>From:</label>
-				<input
-					type="month"
-					value={from}
-					onChange={(e) => setFrom(e.target.value)}
-				></input>
-				<label>To:</label>
-				<input
-					type="month"
-					value={to}
-					onChange={(e) => setTo(e.target.value)}
-				></input>
-
 				<label>Title:</label>
 				<input
 					type="text"
@@ -49,6 +36,20 @@ const AddWork = ({ onAdd }) => {
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 				></input>
+				<div className="flex">
+					<label>From:</label>
+					<input
+						type="month"
+						value={from}
+						onChange={(e) => setFrom(e.target.value)}
+					></input>
+					<label>To:</label>
+					<input
+						type="month"
+						value={to}
+						onChange={(e) => setTo(e.target.value)}
+					></input>
+				</div>
 			</div>
 			<input type="submit" className="btn btn-block" value="Save" />
 		</form>

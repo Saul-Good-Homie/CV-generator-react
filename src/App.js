@@ -9,6 +9,7 @@ import AddSkill from './components/AddSkill.js';
 import AddPersonal from './components/AddPersonal.js';
 import PersonalSections from './components/PersonalSections.js';
 import SkillSections from './components/SkillSections';
+import Footer from './components/Footer.js';
 
 function App() {
 	//Personal data
@@ -116,6 +117,8 @@ function App() {
 
 			{showAddSkill && <AddSkill onAdd={addSkill} />}
 			<SkillSections dataset={skillDataset} onDelete={deleteSkill} />
+
+			<Footer />
 		</div>
 	);
 }
